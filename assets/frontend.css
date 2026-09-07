@@ -1,0 +1,124 @@
+.pp-links-hub {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--pp-bg, #f4f4f5);
+    background-image: var(--pp-bg-image, none);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--pp-fg, #18181b);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 48px 16px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .pp-links-hub {
+        background-attachment: scroll;
+    }
+}
+
+.pp-links-hub__card {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.pp-links-hub--has-background .pp-links-hub__card {
+    background: rgba(var(--pp-bg-rgb, 244, 244, 245), 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 32px 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.pp-links-hub__avatar img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+}
+
+.pp-links-hub__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 8px;
+}
+
+.pp-links-hub__bio {
+    margin: 0 0 24px;
+    opacity: 0.8;
+    font-size: 0.95rem;
+}
+
+.pp-links-hub__social {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.pp-links-hub__social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--pp-accent, #2563eb);
+    color: var(--pp-bg, #fff);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.pp-links-hub__social-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+.pp-links-hub__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pp-links-hub__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 20px;
+    border-radius: 12px;
+    background: var(--pp-accent, #2563eb);
+    color: var(--pp-bg, #fff);
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.15s ease;
+}
+
+.pp-links-hub__link-icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+}
+
+.pp-links-hub__link-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.pp-links-hub__link:hover {
+    transform: translateY(-2px);
+}

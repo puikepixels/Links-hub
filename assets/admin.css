@@ -1,0 +1,331 @@
+/**
+ * Puike Pixels — Links Hub admin
+ * --------------------------------
+ */
+
+:root {
+    --pp-primary: #24195d;
+    --pp-primary-hover: #1b1347;
+    --pp-text: #24195d;
+    --pp-muted: #747280;
+    --pp-border: #dedde5;
+    --pp-background: #f6f5f9;
+    --pp-white: #ffffff;
+    --pp-radius: 12px;
+}
+
+/* =========================================================
+   LINKS BUILDER
+   ========================================================= */
+
+.pp-links-hub-builder__rows {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.pp-links-hub-row {
+    display: grid;
+    grid-template-columns: 24px 1fr 1fr auto;
+    grid-template-areas:
+        "handle label url remove"
+        "handle icon enabled remove"
+        "handle starts ends remove";
+    gap: 8px 12px;
+    align-items: center;
+    padding: 14px;
+    background: var(--pp-white);
+    border: 1px solid var(--pp-border);
+    border-radius: var(--pp-radius);
+    box-shadow: 0 1px 2px rgba(36, 25, 93, 0.04);
+    transition: box-shadow 150ms ease, border-color 150ms ease;
+}
+
+.pp-links-hub-row:hover {
+    border-color: #c9c7d2;
+    box-shadow: 0 4px 14px rgba(36, 25, 93, 0.07);
+}
+
+.pp-links-hub-row.is-dragging {
+    opacity: 0.4;
+}
+
+.pp-links-hub-row__handle {
+    grid-area: handle;
+    cursor: grab;
+    text-align: center;
+    color: var(--pp-muted);
+}
+
+.pp-links-hub-row__label { grid-area: label; }
+.pp-links-hub-row__url { grid-area: url; }
+
+.pp-links-hub-row__icon {
+    grid-area: icon;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pp-links-hub-row__icon-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: var(--pp-background);
+    color: var(--pp-primary);
+}
+
+.pp-links-hub-row__icon-preview svg {
+    width: 16px;
+    height: 16px;
+}
+
+.pp-links-hub-row__icon-select {
+    flex: 1 1 auto;
+    border: 1px solid var(--pp-border);
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.pp-links-hub-row__icon-select:focus {
+    border-color: var(--pp-primary);
+    box-shadow: 0 0 0 3px rgba(36, 25, 93, 0.10);
+}
+
+.pp-links-hub-row__enabled {
+    grid-area: enabled;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--pp-muted);
+    font-size: 12px;
+}
+
+.pp-links-hub-row__starts,
+.pp-links-hub-row__ends {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    color: var(--pp-muted);
+    font-size: 12px;
+}
+
+.pp-links-hub-row__starts { grid-area: starts; }
+.pp-links-hub-row__ends { grid-area: ends; }
+
+.pp-links-hub-row__remove {
+    grid-area: remove;
+    color: var(--pp-muted) !important;
+    text-decoration: none !important;
+}
+
+.pp-links-hub-row__remove:hover {
+    color: #d63638 !important;
+}
+
+.pp-links-hub-row input[type="text"],
+.pp-links-hub-row input[type="url"],
+.pp-links-hub-row input[type="datetime-local"] {
+    width: 100%;
+    border: 1px solid var(--pp-border);
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.pp-links-hub-row input[type="text"]:focus,
+.pp-links-hub-row input[type="url"]:focus,
+.pp-links-hub-row input[type="datetime-local"]:focus {
+    border-color: var(--pp-primary);
+    box-shadow: 0 0 0 3px rgba(36, 25, 93, 0.10);
+}
+
+.pp-links-hub-add-link.button {
+    border-radius: 8px !important;
+    border-color: var(--pp-primary) !important;
+    color: var(--pp-primary) !important;
+    background: var(--pp-white) !important;
+    box-shadow: none !important;
+}
+
+.pp-links-hub-add-link.button:hover {
+    background: var(--pp-background) !important;
+    border-color: var(--pp-primary-hover) !important;
+    color: var(--pp-primary-hover) !important;
+}
+
+/* =========================================================
+   THEME META BOX
+   ========================================================= */
+
+.pp-links-hub-theme-box .pp-links-hub-field {
+    margin-bottom: 14px;
+}
+
+.pp-links-hub-theme-box .pp-links-hub-field-row {
+    display: flex;
+    gap: 16px;
+}
+
+.pp-links-hub-theme-box .pp-links-hub-field-row .pp-links-hub-field {
+    flex: 1 1 0;
+}
+
+.pp-links-hub-theme-box label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--pp-text);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.pp-links-hub-theme-box textarea.widefat,
+.pp-links-hub-theme-box select.widefat {
+    border: 1px solid var(--pp-border);
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.pp-links-hub-theme-box textarea.widefat:focus,
+.pp-links-hub-theme-box select.widefat:focus {
+    border-color: var(--pp-primary);
+    box-shadow: 0 0 0 3px rgba(36, 25, 93, 0.10);
+}
+
+.pp-links-hub-background-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 140px;
+    margin-bottom: 8px;
+    background-color: var(--pp-background);
+    background-size: cover;
+    background-position: center;
+    border: 1px solid var(--pp-border);
+    border-radius: var(--pp-radius);
+    color: var(--pp-muted);
+    font-size: 12px;
+    text-align: center;
+}
+
+.pp-links-hub-background-remove {
+    color: var(--pp-muted) !important;
+}
+
+.pp-links-hub-background-remove:hover {
+    color: #d63638 !important;
+}
+
+/* =========================================================
+   ANALYTICS META BOX
+   ========================================================= */
+
+.pp-links-hub-analytics {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pp-links-hub-analytics__row {
+    margin-bottom: 12px;
+}
+
+.pp-links-hub-analytics__label {
+    display: block;
+    color: var(--pp-text);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.pp-links-hub-analytics__bar-track {
+    display: block;
+    height: 6px;
+    background: var(--pp-background);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.pp-links-hub-analytics__bar {
+    display: block;
+    height: 100%;
+    background: var(--pp-primary);
+    border-radius: 3px;
+}
+
+.pp-links-hub-analytics__count {
+    display: block;
+    margin-top: 3px;
+    font-size: 12px;
+    color: var(--pp-muted);
+}
+
+/* =========================================================
+   META BOX HEADERS
+   ========================================================= */
+
+#pp-links-hub-builder.postbox .postbox-header,
+#pp-links-hub-theme.postbox .postbox-header,
+#pp-links-hub-analytics.postbox .postbox-header,
+#postimagediv.postbox .postbox-header {
+    border-left: 3px solid var(--pp-primary);
+}
+
+/* =========================================================
+   AVATAR (FEATURED IMAGE) BOX
+   ========================================================= */
+
+#postimagediv .inside {
+    text-align: center;
+}
+
+#postimagediv .inside img {
+    display: block;
+    margin: 0 auto 10px;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--pp-white);
+    box-shadow: 0 0 0 1px var(--pp-border), 0 4px 14px rgba(36, 25, 93, 0.10);
+}
+
+#postimagediv .inside #set-post-thumbnail {
+    display: inline-block;
+    color: var(--pp-primary);
+    text-decoration: none;
+}
+
+#postimagediv .inside #set-post-thumbnail:hover {
+    color: var(--pp-primary-hover);
+}
+
+#postimagediv .inside:not(:has(img)) #set-post-thumbnail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background: var(--pp-background);
+    border: 2px dashed var(--pp-border);
+    color: var(--pp-muted);
+    font-size: 12px;
+    text-align: center;
+}
+
+#postimagediv .inside:not(:has(img)) #set-post-thumbnail:hover {
+    border-color: var(--pp-primary);
+    color: var(--pp-primary);
+}
+
+#postimagediv .inside #remove-post-thumbnail {
+    color: var(--pp-muted);
+}
