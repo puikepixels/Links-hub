@@ -26,9 +26,14 @@ if ($regular === []) {
                 href="<?php echo esc_url(get_click_url($permalink, (string) $link['id'])); ?>"
                 rel="nofollow noopener"
             >
-                <?php $icon_svg = get_icon_svg((string) ($link['icon'] ?? '')); ?>
-                <?php if ($icon_svg !== '') : ?>
-                    <span class="pp-links-hub__link-icon"><?php echo $icon_svg; ?></span>
+                <?php $pp_icon_svg = get_icon_svg((string) ($link['icon'] ?? '')); ?>
+                <?php if ($pp_icon_svg !== '') : ?>
+                    <span class="pp-links-hub__link-icon">
+                        <?php
+                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- fixed, plugin-authored SVG markup (see includes/icons.php), no user input.
+                        echo $pp_icon_svg;
+                        ?>
+                    </span>
                 <?php endif; ?>
                 <span class="pp-links-hub__link-label"><?php echo esc_html((string) $link['label']); ?></span>
             </a>

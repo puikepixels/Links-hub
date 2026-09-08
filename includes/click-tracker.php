@@ -35,6 +35,7 @@ function handle_click_redirect(): void
 
     log_click($page->ID, $link_id);
 
+    // phpcs:ignore WordPress.Security.SafeRedirect.wp_redirect_wp_redirect -- target is an admin-configured external URL (sanitized on save via esc_url_raw), not restricted to this site's hosts.
     wp_redirect(esc_url_raw((string) $link['url']), 302);
     exit;
 }
@@ -43,6 +44,7 @@ function log_click(int $page_id, string $link_id): void
 {
     global $wpdb;
 
+    // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- $wpdb->insert() is the recommended API for writing to a custom table.
     $wpdb->insert(
         clicks_table_name(),
         [

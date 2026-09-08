@@ -24,19 +24,19 @@ function get_icon_library(): array
 
     $icons = [
         'link' => [
-            'label' => __('Link (algemeen)', TEXT_DOMAIN),
+            'label' => __('Link (algemeen)', 'puikepixels-links-hub'),
             'svg' => '<path d="M10.5 13.5 13.5 10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8.5 15.5 6 18a3.5 3.5 0 0 1-5-5l3-3a3.5 3.5 0 0 1 5 0" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M15.5 8.5 18 6a3.5 3.5 0 0 1 5 5l-3 3a3.5 3.5 0 0 1-5 0" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>',
         ],
         'website' => [
-            'label' => __('Website', TEXT_DOMAIN),
+            'label' => __('Website', 'puikepixels-links-hub'),
             'svg' => '<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" stroke="currentColor" stroke-width="2" fill="none"/>',
         ],
         'email' => [
-            'label' => __('E-mail', TEXT_DOMAIN),
+            'label' => __('E-mail', 'puikepixels-links-hub'),
             'svg' => '<rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>',
         ],
         'phone' => [
-            'label' => __('Telefoon', TEXT_DOMAIN),
+            'label' => __('Telefoon', 'puikepixels-links-hub'),
             'svg' => '<path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>',
         ],
         'whatsapp' => [

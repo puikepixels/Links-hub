@@ -19,7 +19,7 @@ function register_builder_meta_box(): void
 {
     add_meta_box(
         'pp-links-hub-builder',
-        __('Links', TEXT_DOMAIN),
+        __('Links', 'puikepixels-links-hub'),
         __NAMESPACE__ . '\\render_builder_meta_box',
         POST_TYPE,
         'normal',
@@ -31,16 +31,16 @@ function render_builder_meta_box(\WP_Post $post): void
 {
     wp_nonce_field(BUILDER_NONCE_ACTION, BUILDER_NONCE_FIELD);
 
-    $links = get_links($post->ID);
+    $links = get_page_links($post->ID);
     ?>
     <div class="pp-links-hub-builder" data-initial-links="<?php echo esc_attr(wp_json_encode($links)); ?>">
         <div class="pp-links-hub-builder__rows"></div>
         <p>
             <button type="button" class="button pp-links-hub-add-link" data-type="link">
-                <?php esc_html_e('+ Link toevoegen', TEXT_DOMAIN); ?>
+                <?php esc_html_e('+ Link toevoegen', 'puikepixels-links-hub'); ?>
             </button>
             <button type="button" class="button pp-links-hub-add-link" data-type="social">
-                <?php esc_html_e('+ Social icoon toevoegen', TEXT_DOMAIN); ?>
+                <?php esc_html_e('+ Social icoon toevoegen', 'puikepixels-links-hub'); ?>
             </button>
         </p>
         <textarea
@@ -80,19 +80,19 @@ function enqueue_builder_assets(string $hook): void
     );
 
     wp_localize_script('pp-links-hub-admin', 'ppLinksHubI18n', [
-        'label' => __('Titel', TEXT_DOMAIN),
-        'url' => __('URL', TEXT_DOMAIN),
-        'icon' => __('Icoon', TEXT_DOMAIN),
-        'enabled' => __('Actief', TEXT_DOMAIN),
-        'startsAt' => __('Zichtbaar vanaf', TEXT_DOMAIN),
-        'endsAt' => __('Zichtbaar tot', TEXT_DOMAIN),
-        'remove' => __('Verwijderen', TEXT_DOMAIN),
-        'dragHandle' => __('Versleep om te herordenen', TEXT_DOMAIN),
-        'iconNone' => __('Geen icoon', TEXT_DOMAIN),
+        'label' => __('Titel', 'puikepixels-links-hub'),
+        'url' => __('URL', 'puikepixels-links-hub'),
+        'icon' => __('Icoon', 'puikepixels-links-hub'),
+        'enabled' => __('Actief', 'puikepixels-links-hub'),
+        'startsAt' => __('Zichtbaar vanaf', 'puikepixels-links-hub'),
+        'endsAt' => __('Zichtbaar tot', 'puikepixels-links-hub'),
+        'remove' => __('Verwijderen', 'puikepixels-links-hub'),
+        'dragHandle' => __('Versleep om te herordenen', 'puikepixels-links-hub'),
+        'iconNone' => __('Geen icoon', 'puikepixels-links-hub'),
         'icons' => get_icon_options_for_js(),
-        'chooseBackgroundTitle' => __('Kies een achtergrondafbeelding', TEXT_DOMAIN),
-        'chooseBackgroundButton' => __('Gebruiken', TEXT_DOMAIN),
-        'noBackground' => __('Geen achtergrond gekozen', TEXT_DOMAIN),
+        'chooseBackgroundTitle' => __('Kies een achtergrondafbeelding', 'puikepixels-links-hub'),
+        'chooseBackgroundButton' => __('Gebruiken', 'puikepixels-links-hub'),
+        'noBackground' => __('Geen achtergrond gekozen', 'puikepixels-links-hub'),
     ]);
 }
 
@@ -137,6 +137,7 @@ function save_builder_meta_box(int $post_id): void
         return;
     }
 
+    // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- raw JSON is decoded then run through sanitize_links() below, field by field.
     $raw_json = wp_unslash($_POST['pp_links_json']);
     $decoded = json_decode(is_string($raw_json) ? $raw_json : '', true);
 

@@ -14,7 +14,7 @@ function register_analytics_meta_box(): void
 {
     add_meta_box(
         'pp-links-hub-analytics',
-        __('Statistieken', TEXT_DOMAIN),
+        __('Statistieken', 'puikepixels-links-hub'),
         __NAMESPACE__ . '\\render_analytics_meta_box',
         POST_TYPE,
         'side',
@@ -29,9 +29,9 @@ function get_click_counts(int $post_id): array
 {
     global $wpdb;
 
-    $table = clicks_table_name();
+    $table = esc_sql(clicks_table_name());
 
-    // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- table name cannot be a placeholder.
+    // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- custom table, per-page click counts, table name cannot be a placeholder and freshness matters more than caching.
     $rows = $wpdb->get_results(
         $wpdb->prepare(
             "SELECT link_id, COUNT(*) AS total FROM {$table} WHERE page_id = %d GROUP BY link_id",
@@ -50,12 +50,12 @@ function get_click_counts(int $post_id): array
 
 function render_analytics_meta_box(\WP_Post $post): void
 {
-    $links = get_links($post->ID);
+    $links = get_page_links($post->ID);
     $counts = get_click_counts($post->ID);
     $max = $counts !== [] ? max($counts) : 0;
 
     if ($links === []) {
-        echo '<p>' . esc_html__('Nog geen links om statistieken voor te tonen.', TEXT_DOMAIN) . '</p>';
+        echo '<p>' . esc_html__('Nog geen links om statistieken voor te tonen.', 'puikepixels-links-hub') . '</p>';
 
         return;
     }
@@ -76,7 +76,7 @@ function render_analytics_meta_box(\WP_Post $post): void
                 <?php
                 printf(
                     /* translators: %d: aantal kliks */
-                    esc_html(_n('%d klik', '%d kliks', $total, TEXT_DOMAIN)),
+                    esc_html(_n('%d klik', '%d kliks', $total, 'puikepixels-links-hub')),
                     (int) $total
                 );
                 ?>

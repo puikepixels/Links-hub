@@ -1,10 +1,21 @@
 # Puike Links Hub
 
-One public page on your own WordPress site with an avatar, bio, theme and a
-list of clickable links — including scheduled links, social icons and click
-analytics. Ideal as a central landing page for, for example, your bio link on
-social media. No external services, no heavy dependencies, just a WordPress
-plugin.
+Contributors: puikepixels  
+Donate link: https://puikepixels.com  
+Tags: link in bio, links page, social links, click tracking, bio link  
+Requires at least: 6.4  
+Tested up to: 6.7  
+Requires PHP: 8.3  
+Stable tag: 1.0.0  
+License: GPLv2 or later  
+License URI: https://www.gnu.org/licenses/gpl-2.0.html  
+
+One public page on your own WordPress site with an avatar, bio, theme and a list of clickable links, complete with scheduling and click analytics.
+
+## Description
+
+Ideal as a central landing page for, for example, your bio link on social
+media. No external services, no heavy dependencies, just a WordPress plugin.
 
 ## Features
 

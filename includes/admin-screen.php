@@ -74,7 +74,7 @@ function relabel_featured_image_as_avatar(): void
     remove_meta_box('postimagediv', POST_TYPE, 'side');
     add_meta_box(
         'postimagediv',
-        __('Avatar', TEXT_DOMAIN),
+        __('Avatar', 'puikepixels-links-hub'),
         'post_thumbnail_meta_box',
         POST_TYPE,
         'side',

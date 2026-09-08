@@ -16,12 +16,12 @@ function register_post_type_pp_link_page(): void
 {
     register_post_type(POST_TYPE, [
         'labels' => [
-            'name' => __('Links pagina\'s', TEXT_DOMAIN),
-            'singular_name' => __('Links pagina', TEXT_DOMAIN),
-            'add_new_item' => __('Nieuwe links pagina', TEXT_DOMAIN),
-            'edit_item' => __('Links pagina bewerken', TEXT_DOMAIN),
-            'all_items' => __('Links pagina\'s', TEXT_DOMAIN),
-            'menu_name' => __('Links Hub', TEXT_DOMAIN),
+            'name' => __('Links pagina\'s', 'puikepixels-links-hub'),
+            'singular_name' => __('Links pagina', 'puikepixels-links-hub'),
+            'add_new_item' => __('Nieuwe links pagina', 'puikepixels-links-hub'),
+            'edit_item' => __('Links pagina bewerken', 'puikepixels-links-hub'),
+            'all_items' => __('Links pagina\'s', 'puikepixels-links-hub'),
+            'menu_name' => __('Links Hub', 'puikepixels-links-hub'),
         ],
         'public' => true,
         'has_archive' => false,

@@ -23,7 +23,7 @@ const THEME_PRESETS = [
 /**
  * @return array<int, array{id: string, label: string, url: string, icon: string, type: string, enabled: bool, starts_at: string, ends_at: string, order: int}>
  */
-function get_links(int $post_id): array
+function get_page_links(int $post_id): array
 {
     $raw = get_post_meta($post_id, META_LINKS, true);
 
@@ -135,7 +135,7 @@ function is_link_active(array $link): bool
  */
 function get_active_links(int $post_id): array
 {
-    return array_values(array_filter(get_links($post_id), __NAMESPACE__ . '\\is_link_active'));
+    return array_values(array_filter(get_page_links($post_id), __NAMESPACE__ . '\\is_link_active'));
 }
 
 function get_click_url(string $permalink, string $link_id): string
@@ -145,7 +145,7 @@ function get_click_url(string $permalink, string $link_id): string
 
 function find_link(int $post_id, string $link_id): ?array
 {
-    foreach (get_links($post_id) as $link) {
+    foreach (get_page_links($post_id) as $link) {
         if (($link['id'] ?? '') === $link_id) {
             return $link;
         }

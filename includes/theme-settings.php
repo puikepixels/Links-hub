@@ -18,7 +18,7 @@ function register_theme_meta_box(): void
 {
     add_meta_box(
         'pp-links-hub-theme',
-        __('Uiterlijk', TEXT_DOMAIN),
+        __('Uiterlijk', 'puikepixels-links-hub'),
         __NAMESPACE__ . '\\render_theme_meta_box',
         POST_TYPE,
         'normal',
@@ -38,7 +38,7 @@ function render_theme_meta_box(\WP_Post $post): void
     ?>
     <div class="pp-links-hub-theme-box">
         <p class="pp-links-hub-field">
-            <label for="pp-links-hub-bio"><?php esc_html_e('Bio', TEXT_DOMAIN); ?></label>
+            <label for="pp-links-hub-bio"><?php esc_html_e('Bio', 'puikepixels-links-hub'); ?></label>
             <textarea
                 id="pp-links-hub-bio"
                 name="pp_bio"
@@ -48,15 +48,15 @@ function render_theme_meta_box(\WP_Post $post): void
         </p>
         <div class="pp-links-hub-field-row">
             <p class="pp-links-hub-field">
-                <label for="pp-links-hub-preset"><?php esc_html_e('Thema', TEXT_DOMAIN); ?></label>
+                <label for="pp-links-hub-preset"><?php esc_html_e('Thema', 'puikepixels-links-hub'); ?></label>
                 <select id="pp-links-hub-preset" name="pp_theme_preset" class="widefat">
-                    <option value="light" <?php selected($preset, 'light'); ?>><?php esc_html_e('Licht', TEXT_DOMAIN); ?></option>
-                    <option value="dark" <?php selected($preset, 'dark'); ?>><?php esc_html_e('Donker', TEXT_DOMAIN); ?></option>
-                    <option value="custom" <?php selected($preset, 'custom'); ?>><?php esc_html_e('Aangepast', TEXT_DOMAIN); ?></option>
+                    <option value="light" <?php selected($preset, 'light'); ?>><?php esc_html_e('Licht', 'puikepixels-links-hub'); ?></option>
+                    <option value="dark" <?php selected($preset, 'dark'); ?>><?php esc_html_e('Donker', 'puikepixels-links-hub'); ?></option>
+                    <option value="custom" <?php selected($preset, 'custom'); ?>><?php esc_html_e('Aangepast', 'puikepixels-links-hub'); ?></option>
                 </select>
             </p>
             <p class="pp-links-hub-field">
-                <label for="pp-links-hub-accent"><?php esc_html_e('Accentkleur', TEXT_DOMAIN); ?></label>
+                <label for="pp-links-hub-accent"><?php esc_html_e('Accentkleur', 'puikepixels-links-hub'); ?></label>
                 <input
                     type="text"
                     id="pp-links-hub-accent"
@@ -67,17 +67,17 @@ function render_theme_meta_box(\WP_Post $post): void
             </p>
         </div>
         <p class="description">
-            <?php esc_html_e('De avatar stel je hiernaast in via de Avatar-box.', TEXT_DOMAIN); ?>
+            <?php esc_html_e('De avatar stel je hiernaast in via de Avatar-box.', 'puikepixels-links-hub'); ?>
         </p>
 
         <div class="pp-links-hub-field pp-links-hub-background-field">
-            <label><?php esc_html_e('Achtergrondafbeelding', TEXT_DOMAIN); ?></label>
+            <label><?php esc_html_e('Achtergrondafbeelding', 'puikepixels-links-hub'); ?></label>
             <div
                 class="pp-links-hub-background-preview"
                 <?php echo $background_thumb ? 'style="background-image:url(' . esc_url($background_thumb) . ')"' : ''; ?>
             >
                 <span<?php echo $background_thumb ? ' style="display:none;"' : ''; ?>>
-                    <?php esc_html_e('Geen achtergrond gekozen', TEXT_DOMAIN); ?>
+                    <?php esc_html_e('Geen achtergrond gekozen', 'puikepixels-links-hub'); ?>
                 </span>
             </div>
             <input
@@ -88,16 +88,16 @@ function render_theme_meta_box(\WP_Post $post): void
             >
             <p>
                 <button type="button" class="button pp-links-hub-background-select">
-                    <?php esc_html_e('Achtergrond kiezen', TEXT_DOMAIN); ?>
+                    <?php esc_html_e('Achtergrond kiezen', 'puikepixels-links-hub'); ?>
                 </button>
                 <button
                     type="button"
                     class="button-link pp-links-hub-background-remove"
                     <?php echo $background_id > 0 ? '' : 'style="display:none;"'; ?>
-                ><?php esc_html_e('Verwijderen', TEXT_DOMAIN); ?></button>
+                ><?php esc_html_e('Verwijderen', 'puikepixels-links-hub'); ?></button>
             </p>
             <p class="description">
-                <?php esc_html_e('Optioneel: vervangt de effen thema-achtergrond op de publieke pagina.', TEXT_DOMAIN); ?>
+                <?php esc_html_e('Optioneel: vervangt de effen thema-achtergrond op de publieke pagina.', 'puikepixels-links-hub'); ?>
             </p>
         </div>
     </div>
@@ -127,8 +127,12 @@ function save_theme_meta_box(int $post_id): void
         update_post_meta($post_id, META_BIO, sanitize_textarea_field(wp_unslash($_POST['pp_bio'])));
     }
 
-    if (isset($_POST['pp_theme_preset']) && array_key_exists($_POST['pp_theme_preset'], THEME_PRESETS)) {
-        update_post_meta($post_id, META_THEME_PRESET, sanitize_key(wp_unslash($_POST['pp_theme_preset'])));
+    if (isset($_POST['pp_theme_preset'])) {
+        $preset = sanitize_key(wp_unslash($_POST['pp_theme_preset']));
+
+        if (array_key_exists($preset, THEME_PRESETS)) {
+            update_post_meta($post_id, META_THEME_PRESET, $preset);
+        }
     }
 
     if (isset($_POST['pp_theme_accent'])) {

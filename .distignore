@@ -1,0 +1,13 @@
+.git
+.gitignore
+.github
+.DS_Store
+.claude
+.dual-graph
+.distignore
+CLAUDE.md
+CONTEXT.md
+CHANGELOG.md
+composer.json
+composer.lock
+readme.md
