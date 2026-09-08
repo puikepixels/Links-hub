@@ -101,7 +101,8 @@ load a different template set per site.
 
 - Custom post type `pp_link_page` (title = page name/slug, featured image = avatar)
 - Postmeta: `_pp_bio`, `_pp_theme_preset`, `_pp_theme_accent`, `_pp_background_id` (attachment ID), `_pp_links` (JSON)
-- Dedicated table `{prefix}pp_links_hub_clicks` for click analytics (created on activation, cleaned up when the plugin is deleted)
+- Dedicated table `{prefix}pp_links_hub_clicks` for click analytics (created on activation)
+- Deleting the plugin (not just deactivating it) drops the clicks table and permanently deletes all `pp_link_page` posts
 
 ## Contributing
 

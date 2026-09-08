@@ -7,7 +7,7 @@
  * Author URI: https://puikepixels.com
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: puike-links-hub
+ * Text Domain: puikepixels-links-hub
  */
 
 declare(strict_types=1);
@@ -21,7 +21,7 @@ if (! defined('ABSPATH')) {
 const VERSION = '1.0.0';
 const POST_TYPE = 'pp_link_page';
 const REWRITE_SLUG = 'links';
-const TEXT_DOMAIN = 'puike-links-hub';
+const TEXT_DOMAIN = 'puikepixels-links-hub';
 const PLUGIN_FILE = __FILE__;
 
 function plugin_dir(): string
