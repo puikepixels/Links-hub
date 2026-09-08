@@ -2,7 +2,7 @@
     "name": "puikepixels/links-hub",
     "description": "Eigen link-pagina voor WordPress met avatar, bio, thema's, geplande links en click-analytics.",
     "type": "wordpress-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "GPL-2.0-or-later",
     "homepage": "https://github.com/puikepixels/wp-puikepixels-links-hub",
     "authors": [
