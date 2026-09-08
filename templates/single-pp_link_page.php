@@ -12,12 +12,15 @@ the_post();
 
 $post_id = get_the_ID();
 $pp_links = get_active_links($post_id);
+
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- template variables, scoped to the including function (WP core's load_template()), not real globals.
 $pp_bio = get_bio($post_id);
 $pp_permalink = get_permalink($post_id);
 
 $pp_social = array_values(array_filter($pp_links, fn (array $link): bool => ($link['type'] ?? 'link') === 'social'));
 $pp_regular = array_values(array_filter($pp_links, fn (array $link): bool => ($link['type'] ?? 'link') !== 'social'));
 $pp_has_background = get_background_image_url($post_id) !== '';
+// phpcs:enable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>

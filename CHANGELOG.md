@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2026-09-08
+
+### Fixed
+
+- Fixed `phpcs:ignore` comments that only suppressed the line directly beneath them instead of the actual flagged line in multi-line statements (`admin-analytics.php`, `uninstall.php`, `templates/parts/social-links.php`).
+- Corrected a mismatched sniff code in an ignore comment in `uninstall.php` (`PreparedSQL.NotPrepared` → `PreparedSQL.InterpolatedNotPrepared`).
+- Suppressed remaining `PrefixAllGlobals.NonPrefixedVariableFound` warnings for template-local variables that are scoped via `extract()`/`include` rather than true PHP globals.
+- Bumped "Tested up to" to 7.1.
+
 ## [1.0.1] - 2026-09-08
 
 ### Fixed

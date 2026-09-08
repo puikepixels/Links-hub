@@ -26,7 +26,10 @@ if ($regular === []) {
                 href="<?php echo esc_url(get_click_url($permalink, (string) $link['id'])); ?>"
                 rel="nofollow noopener"
             >
-                <?php $pp_icon_svg = get_icon_svg((string) ($link['icon'] ?? '')); ?>
+                <?php
+                // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- template-part local variable, scoped to the including function via extract() (see includes/template-loader.php), not a real global.
+                $pp_icon_svg = get_icon_svg((string) ($link['icon'] ?? ''));
+                ?>
                 <?php if ($pp_icon_svg !== '') : ?>
                     <span class="pp-links-hub__link-icon">
                         <?php

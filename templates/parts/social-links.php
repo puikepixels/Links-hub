@@ -27,11 +27,14 @@ if ($social === []) {
             aria-label="<?php echo esc_attr((string) $link['label']); ?>"
         >
             <?php
+            // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- template-part local variable, scoped to the including function via extract() (see includes/template-loader.php), not a real global.
             $pp_icon_svg = get_icon_svg((string) ($link['icon'] ?? ''));
-            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- fixed, plugin-authored SVG markup (see includes/icons.php), no user input.
-            echo $pp_icon_svg !== ''
-                ? $pp_icon_svg
-                : esc_html(strtoupper(substr((string) $link['label'], 0, 1)));
+            if ($pp_icon_svg !== '') :
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- plugin-authored SVG markup (see includes/icons.php), no user input.
+                echo $pp_icon_svg;
+            else :
+                echo esc_html(strtoupper(substr((string) $link['label'], 0, 1)));
+            endif;
             ?>
         </a>
     <?php endforeach; ?>

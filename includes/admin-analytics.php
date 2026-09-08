@@ -31,9 +31,10 @@ function get_click_counts(int $post_id): array
 
     $table = esc_sql(clicks_table_name());
 
-    // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- custom table, per-page click counts, table name cannot be a placeholder and freshness matters more than caching.
+    // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- custom table, per-page click counts; freshness matters more than caching.
     $rows = $wpdb->get_results(
         $wpdb->prepare(
+            // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- table name cannot be a placeholder; it is escaped via esc_sql() above.
             "SELECT link_id, COUNT(*) AS total FROM {$table} WHERE page_id = %d GROUP BY link_id",
             $post_id
         ),

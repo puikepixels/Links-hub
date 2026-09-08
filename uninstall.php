@@ -12,9 +12,10 @@ require __DIR__ . '/includes/activation.php';
 
 global $wpdb;
 
+// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- uninstall.php local variable, not a real global; the script runs once and exits.
 $table = esc_sql(clicks_table_name());
 
-// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.SchemaChange, WordPress.DB.PreparedSQL.NotPrepared -- table name cannot be a placeholder; escaped, and this only runs once on uninstall.
+// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.SchemaChange, WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- table name cannot be a placeholder; escaped, and this only runs once on uninstall.
 $wpdb->query("DROP TABLE IF EXISTS {$table}");
 
 $posts = get_posts([

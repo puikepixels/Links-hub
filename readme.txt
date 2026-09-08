@@ -3,9 +3,9 @@ Contributors: puikepixels
 Donate link: https://puikepixels.com
 Tags: link in bio, links page, social links, click tracking, bio link
 Requires at least: 6.4
-Tested up to: 6.7
+Tested up to: 7.1
 Requires PHP: 8.3
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -57,6 +57,9 @@ When the plugin is deleted through the WordPress admin, the custom database tabl
 
 == Changelog ==
 
+= 1.0.2 =
+* Fixed misplaced/mismatched PHPCS ignore comments so they suppress the correct line, and cleaned up remaining variable-prefix and SQL-escaping warnings.
+
 = 1.0.1 =
 * Fixed WordPress Plugin Check / PHPCS findings: literal text domains, escaped/sanitized output and input, renamed an internal function that collided with a deprecated core function name, and completed the readme.md header block.
 
@@ -64,6 +67,9 @@ When the plugin is deleted through the WordPress admin, the custom database tabl
 * Initial release: public link page, drag-and-drop builder, theming, scheduling and click analytics.
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+Code-quality fixes, no functional changes.
 
 = 1.0.1 =
 Code-quality and security hardening fixes, no functional changes.
