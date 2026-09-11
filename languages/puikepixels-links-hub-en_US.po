@@ -4,190 +4,191 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Puike Links Hub 1.0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-puikepixels-links-hub\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: Puike Pixels <info@puikepixels.com>\n"
+"Language-Team: English\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-09-11T05:26:12+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2026-09-11 00:00+0100\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: puikepixels-links-hub\n"
 
 #. Plugin Name of the plugin
 msgid "Puike Links Hub"
-msgstr ""
+msgstr "Puike Links Hub"
 
 #. Description of the plugin
 msgid "Eigen link-pagina met avatar, bio, thema's, geplande links en click-analytics."
-msgstr ""
+msgstr "Your own link page with avatar, bio, themes, scheduled links and click analytics."
 
 #. Author of the plugin
 msgid "Puike Pixels"
-msgstr ""
+msgstr "Puike Pixels"
 
 #. Author URI of the plugin
 msgid "https://puikepixels.com"
-msgstr ""
+msgstr "https://puikepixels.com"
 
 #: includes/admin-analytics.php:17
 msgid "Statistieken"
-msgstr ""
+msgstr "Statistics"
 
 #: includes/admin-analytics.php:59
 msgid "Nog geen links om statistieken voor te tonen."
-msgstr ""
+msgstr "No links yet to show statistics for."
 
 #. translators: %d: aantal kliks
 #: includes/admin-analytics.php:80
 msgid "%d klik"
 msgid_plural "%d kliks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d click"
+msgstr[1] "%d clicks"
 
 #: includes/admin-builder.php:22
 msgid "Links"
-msgstr ""
+msgstr "Links"
 
 #: includes/admin-builder.php:40
 msgid "+ Link toevoegen"
-msgstr ""
+msgstr "+ Add link"
 
 #: includes/admin-builder.php:43
 msgid "+ Social icoon toevoegen"
-msgstr ""
+msgstr "+ Add social icon"
 
 #: includes/admin-builder.php:83
 msgid "Titel"
-msgstr ""
+msgstr "Title"
 
 #: includes/admin-builder.php:84
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: includes/admin-builder.php:85
 msgid "Icoon"
-msgstr ""
+msgstr "Icon"
 
 #: includes/admin-builder.php:86
 msgid "Actief"
-msgstr ""
+msgstr "Active"
 
 #: includes/admin-builder.php:87
 msgid "Zichtbaar vanaf"
-msgstr ""
+msgstr "Visible from"
 
 #: includes/admin-builder.php:88
 msgid "Zichtbaar tot"
-msgstr ""
+msgstr "Visible until"
 
 #: includes/admin-builder.php:89
 #: includes/theme-settings.php:97
 msgid "Verwijderen"
-msgstr ""
+msgstr "Delete"
 
 #: includes/admin-builder.php:90
 msgid "Versleep om te herordenen"
-msgstr ""
+msgstr "Drag to reorder"
 
 #: includes/admin-builder.php:91
 msgid "Geen icoon"
-msgstr ""
+msgstr "No icon"
 
 #: includes/admin-builder.php:93
 msgid "Kies een achtergrondafbeelding"
-msgstr ""
+msgstr "Choose a background image"
 
 #: includes/admin-builder.php:94
 msgid "Gebruiken"
-msgstr ""
+msgstr "Use"
 
 #: includes/admin-builder.php:95
 #: includes/theme-settings.php:80
 msgid "Geen achtergrond gekozen"
-msgstr ""
+msgstr "No background chosen"
 
 #: includes/admin-screen.php:77
 msgid "Avatar"
-msgstr ""
+msgstr "Avatar"
 
 #: includes/icons.php:27
 msgid "Link (algemeen)"
-msgstr ""
+msgstr "Link (general)"
 
 #: includes/icons.php:31
 msgid "Website"
-msgstr ""
+msgstr "Website"
 
 #: includes/icons.php:35
 msgid "E-mail"
-msgstr ""
+msgstr "Email"
 
 #: includes/icons.php:39
 msgid "Telefoon"
-msgstr ""
+msgstr "Phone"
 
 #: includes/post-type.php:19
 #: includes/post-type.php:23
 msgid "Links pagina's"
-msgstr ""
+msgstr "Link pages"
 
 #: includes/post-type.php:20
 msgid "Links pagina"
-msgstr ""
+msgstr "Link page"
 
 #: includes/post-type.php:21
 msgid "Nieuwe links pagina"
-msgstr ""
+msgstr "New link page"
 
 #: includes/post-type.php:22
 msgid "Links pagina bewerken"
-msgstr ""
+msgstr "Edit link page"
 
 #: includes/post-type.php:24
 msgid "Links Hub"
-msgstr ""
+msgstr "Links Hub"
 
 #: includes/theme-settings.php:21
 msgid "Uiterlijk"
-msgstr ""
+msgstr "Appearance"
 
 #: includes/theme-settings.php:41
 msgid "Bio"
-msgstr ""
+msgstr "Bio"
 
 #: includes/theme-settings.php:51
 msgid "Thema"
-msgstr ""
+msgstr "Theme"
 
 #: includes/theme-settings.php:53
 msgid "Licht"
-msgstr ""
+msgstr "Light"
 
 #: includes/theme-settings.php:54
 msgid "Donker"
-msgstr ""
+msgstr "Dark"
 
 #: includes/theme-settings.php:55
 msgid "Aangepast"
-msgstr ""
+msgstr "Custom"
 
 #: includes/theme-settings.php:59
 msgid "Accentkleur"
-msgstr ""
+msgstr "Accent color"
 
 #: includes/theme-settings.php:70
 msgid "De avatar stel je hiernaast in via de Avatar-box."
-msgstr ""
+msgstr "Set the avatar via the Avatar box to the side."
 
 #: includes/theme-settings.php:74
 msgid "Achtergrondafbeelding"
-msgstr ""
+msgstr "Background image"
 
 #: includes/theme-settings.php:91
 msgid "Achtergrond kiezen"
-msgstr ""
+msgstr "Choose background"
 
 #: includes/theme-settings.php:100
 msgid "Optioneel: vervangt de effen thema-achtergrond op de publieke pagina."
-msgstr ""
+msgstr "Optional: replaces the solid theme background on the public page."
