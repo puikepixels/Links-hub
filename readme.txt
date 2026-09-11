@@ -55,6 +55,34 @@ No. All data, including click analytics, stays in your own WordPress database.
 
 When the plugin is deleted through the WordPress admin, the custom database table used for click analytics is removed and all link pages are permanently deleted. Deactivating the plugin (without deleting it) keeps everything intact.
 
+== Overriding templates ==
+
+Every part of the public link page can be overridden from your own theme, so your customizations survive plugin updates.
+
+= How it works =
+
+The plugin looks for matching files in your active theme first (child theme, then parent theme) inside a `puikepixels-links-hub/` subfolder, and only falls back to its own bundled templates when no override is found.
+
+To override a template, copy the file from the plugin's `templates/` directory into your theme, keeping the same relative path:
+
+`wp-content/themes/your-theme/puikepixels-links-hub/single-pp_link_page.php`
+
+= Overridable files =
+
+* `single-pp_link_page.php` — the full link page template
+* `parts/avatar.php` — the avatar/profile image
+* `parts/bio.php` — the bio text block
+* `parts/links-list.php` — the list of links
+* `parts/social-links.php` — the row of social icons
+
+= Changing the override subfolder =
+
+If `puikepixels-links-hub/` conflicts with something else in your theme, change it with the `pp_links_hub_template_path` filter, for example in your theme's `functions.php`:
+
+`add_filter( 'pp_links_hub_template_path', function () {
+    return 'my-custom-folder/';
+} );`
+
 == Changelog ==
 
 = 1.0.2 =
