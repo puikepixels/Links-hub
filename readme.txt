@@ -5,7 +5,7 @@ Tags: link in bio, links page, social links, click tracking, bio link
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 8.3
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,6 +85,10 @@ If `puikepixels-links-hub/` conflicts with something else in your theme, change 
 
 == Changelog ==
 
+= 1.0.3 =
+* Added an "Overriding templates" documentation section.
+* Added Dutch (nl_NL) and English (en_US) translation files.
+
 = 1.0.2 =
 * Fixed misplaced/mismatched PHPCS ignore comments so they suppress the correct line, and cleaned up remaining variable-prefix and SQL-escaping warnings.
 
@@ -95,6 +99,9 @@ If `puikepixels-links-hub/` conflicts with something else in your theme, change 
 * Initial release: public link page, drag-and-drop builder, theming, scheduling and click analytics.
 
 == Upgrade Notice ==
+
+= 1.0.3 =
+Adds template override docs and Dutch/English translations, no functional changes.
 
 = 1.0.2 =
 Code-quality fixes, no functional changes.

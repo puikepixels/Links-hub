@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Puike Links Hub
  * Description: Eigen link-pagina met avatar, bio, thema's, geplande links en click-analytics.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Puike Pixels
  * Author URI: https://puikepixels.com
  * License: GPL-2.0-or-later
@@ -19,7 +19,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-const VERSION = '1.0.2';
+const VERSION = '1.0.3';
 const POST_TYPE = 'pp_link_page';
 const REWRITE_SLUG = 'links';
 const TEXT_DOMAIN = 'puikepixels-links-hub';
