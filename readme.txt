@@ -55,6 +55,10 @@ No. All data, including click analytics, stays in your own WordPress database.
 
 When the plugin is deleted through the WordPress admin, the custom database table used for click analytics is removed and all link pages are permanently deleted. Deactivating the plugin (without deleting it) keeps everything intact.
 
+= Can I contribute to the plugin? =
+
+Yes. The plugin is developed on GitHub at https://github.com/puikepixels/Links-hub — fork it there and open a pull request if you'd like to help build it out.
+
 == Overriding templates ==
 
 Every part of the public link page can be overridden from your own theme, so your customizations survive plugin updates.

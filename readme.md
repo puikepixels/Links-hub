@@ -117,7 +117,11 @@ load a different template set per site.
 
 ## Contributing
 
-Contributions are welcome. To contribute:
+Contributions are welcome. The package is developed on GitHub at
+[github.com/puikepixels/Links-hub](https://github.com/puikepixels/Links-hub).
+Fork it there and open a pull request if you'd like to help build it out.
+
+To contribute:
 
 1. Fork the repository and create a feature branch.
 2. Follow the existing code style — no build step, so keep CSS/JS dependency-free.
